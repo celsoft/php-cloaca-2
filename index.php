@@ -18,7 +18,7 @@ function curlProxy($mirror, $userAgent)
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'APP_ENGINE: true',
+        'HTTP_APP_ENGINE: true',
     ));
     $result = curl_exec($ch);
     $result = str_replace($oldDomain, $redirectDomain, $result);
