@@ -22,6 +22,7 @@ function curlProxy($mirror, $userAgent)
     $info = curl_getinfo($ch);
     $contentType = $info['content_type'];
     @header("Content-Type: $contentType");
+    @header("APP_ENGINE: true");
     // close cURL resource, and free up system resources
     curl_close($ch);
     return $result;
