@@ -17,12 +17,14 @@ function curlProxy($mirror, $userAgent)
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'APP_ENGINE: true',
+    ));
     $result = curl_exec($ch);
     $result = str_replace($oldDomain, $redirectDomain, $result);
     $info = curl_getinfo($ch);
     $contentType = $info['content_type'];
     @header("Content-Type: $contentType");
-    @header("APP_ENGINE: true");
     // close cURL resource, and free up system resources
     curl_close($ch);
     return $result;
