@@ -1,6 +1,7 @@
 <?php
 
 $oldDomain = 'apparatov.net';
+$redirectDomain = 'aparratov-net.appspot.com';
 
 $user_agent = (isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null);
 
