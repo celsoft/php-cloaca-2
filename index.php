@@ -1,6 +1,6 @@
 <?php
 
-$oldDomain = 'apparatov.net/test.php';
+$oldDomain = 'apparatov.net';
 
 $user_agent = (isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null);
 
