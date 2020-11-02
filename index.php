@@ -16,7 +16,7 @@ function curlProxy($mirror, $userAgent)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent . 'AppEngine-Google');
+    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent . ' AppEngine-Google');
     //curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     //    'X_ENGINE: google',
     //));
