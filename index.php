@@ -16,7 +16,7 @@ function curlProxy($mirror, $userAgent)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+    //curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'HTTP_APP_ENGINE: true',
     ));
