@@ -1,6 +1,6 @@
 <?php
 
-$oldDomain = 'apparatov.net';
+$oldDomain = 'apparatov.net/test.php';
 
 $user_agent = (isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null);
 
@@ -16,10 +16,10 @@ function curlProxy($mirror, $userAgent)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent . ' (GOOGLE_APP_ENGINE)');
-    //curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    //    'HTTP_APP_ENGINE: true',
-    //));
+    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'HTTP_APP_ENGINE: true',
+    ));
     $result = curl_exec($ch);
     $result = str_replace($oldDomain, $redirectDomain, $result);
     $info = curl_getinfo($ch);
